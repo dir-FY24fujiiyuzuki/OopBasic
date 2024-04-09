@@ -1,11 +1,11 @@
 package company;
 
 import java.lang.invoke.StringConcatFactory;
-
-public class Employee implements Workable {
+//抽象クラスに変更
+public abstract class Employee implements Workable {
     //フィールド
     protected final String name;
-    private final Department department;
+    protected final Department department;  //protectedに変更
     private final String position;
     private final int employeeId;
     
@@ -26,14 +26,11 @@ public class Employee implements Workable {
     public void report() {
         report(1);
     }
-
+//抽象メソッドに変更
 //会議に参加するメソッド
-    public void joinMeeting() {
-        department.meeting();
-        System.out.println("→上記の会議に参加します。部署:"+ department.getName() + "名前:"+name);
-        
-        
-    }
+    public abstract void joinMeeting(); 
+    
+   
     //働くメソッドを表現
     @Override
     public void work() {
