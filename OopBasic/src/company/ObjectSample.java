@@ -36,9 +36,23 @@ public class ObjectSample {
          if(projectManager instanceof Engineer) {
              //developSoftwareメソッドを呼び出す
              ((Engineer) projectManager).developSoftware();
+             //-----追記-------
+             
+             System.out.println("");
+             
+             //アルバイトインスタンスの作成
+             var parttimeWoker = new ParttimeWorker("太田", department);
+             
+             //実装したメソッドの呼び出し
+             ((Workable) employee).work();
+             ((Workable)engineer).work();
+             ((Workable)projectManager).work();
+             ((Workable)parttimeWoker).work();
+             //----追記ここまで--------
+             
+             
              
          }
-         //-----追記（ここから）-------------
          
          
          
