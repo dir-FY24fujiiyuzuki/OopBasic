@@ -1,6 +1,6 @@
 package company;
 
-public class Sales extends Enployee{
+public class Sales extends Employee{
     //コンストラクター
     public Sales(String name, Department department, String position, int employeeId ) {
         super(name, department, position,employeeId);
