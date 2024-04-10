@@ -7,20 +7,26 @@ import javax.xml.stream.XMLReporter;
 
 public class ObjectSample {
         public static void main(String[] args) {
-            //変更（ここから）
             // インスタンスの作成
             var department = new Department("営業部", "xx", 1000000);
-            Employee sales = new Sales("鈴木", salesDepartment,"課長", 100);
+            var employee  = new Employee("鈴木", department,"課長", 100);
             
             // インスタンスメソッドの呼び出し
-            sales.report();
-            sales.report(2);
-            sales.joinMeeting();
-            //変更ここまで
-            
+            employee.report();
+            employee.report(2);
+            employee.joinMeeting();
             
             System.out.println("");
             
+         // インスタンスの作成
+            var devDepartment = new Department("開発部", "yy", 0);
+            var engineer = new Engineer("田中", devDepartment, "一般社員", 0, "Java");
+            
+            //インスタンスメソッドの呼び出し
+            engineer.report();
+            engineer.joinMeeting();
+            engineer.developSoftware(); //追記
+         
             //ポリモーフィズムの確認
             Employee projectManager = new Engineer("佐藤", null, "devDepartment", 99, "Java");
             
@@ -35,10 +41,10 @@ public class ObjectSample {
             System.out.println("");
             
             //アルバイトインスタンスの作成
-var parttimeWoker = new ParttimeWorker("太田", salesDepartment);//変更
+var parttimeWoker = new ParttimeWorker("太田", department);
 
 //実装したメソッドの呼び出し
-((Workable)sales).work();//変更
+((Workable)employee).work();
 ((Workable) engineer).work();
 ((Workable)projectManager).work();
 ((Workable)parttimeWoker).work();

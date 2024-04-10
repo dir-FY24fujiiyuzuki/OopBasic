@@ -11,7 +11,7 @@ public class ParttimeWorker implements Workable {
         this.department = department;
     }
     
-    //働くメソッドを実施
+    //働くメソッドを実装
     @Override
     public void work() {
         

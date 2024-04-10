@@ -5,7 +5,7 @@ import java.lang.invoke.StringConcatFactory;
 public abstract class Employee implements Workable {
     //フィールド
     protected final String name;
-    protected final Department department;  //protectedに変更
+    private final Department department; 
     private final String position;
     private final int employeeId;
     
@@ -31,7 +31,7 @@ public abstract class Employee implements Workable {
     public abstract void joinMeeting(); 
     
    
-    //働くメソッドを表現
+    //働くメソッドを実装
     @Override
     public void work() {
         System.out.println("正社員として働きます。名前:" + name + slogan);
